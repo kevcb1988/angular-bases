@@ -1,0 +1,17 @@
+<h1>Listado de Personajes</h1>
+
+<div *ngIf="personajeEliminado; else noBorrado">
+    <h3>Personaje eliminado: <small>{{ personajeEliminado }}</small></h3>
+</div>
+<button (click)="borrarPersonaje()">Borrar</button>
+
+<ng-template #noBorrado>
+    <h3>No has eliminado ningún personaje.</h3>
+</ng-template>
+
+<ul>
+    <li *ngFor="let personaje of personajes; let i = index">
+        {{ i + 1 }} - {{ personaje }}
+    </li>
+</ul>
+
